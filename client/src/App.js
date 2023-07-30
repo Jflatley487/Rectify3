@@ -24,6 +24,7 @@ import About from "./pages/About";
 import Header from "./components/Header";
 import Auth from "./utils/auth";
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });

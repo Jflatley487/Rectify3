@@ -1,6 +1,9 @@
 const mongoose = require('mongoose'); // Import the mongoose library
-mongoose.connect('mongodb://127.0.0.1:27017/rectify', { useNewUrlParser: true, useUnifiedTopology: true }); // Connect to the MongoDB database
+const connectDB = require('../config/connection'); // Import the connection function
 
+
+
+connectDB(); // Call the connection function
 // Define a comment schema using mongoose.Schema.
 const commentSchema = new mongoose.Schema({
     commentBody: {
