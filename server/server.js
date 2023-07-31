@@ -6,7 +6,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
-
+const { InMemoryLRUCache } = require("apollo-server-caching");
 const { typeDefs, resolvers } = require("./schemas");
 const connectDB = require("./config/connection");
 const therapistsRoutes = require("./routes/therapistsRoutes");
