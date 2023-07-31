@@ -1,4 +1,7 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const { ApolloServer, InMemoryLRUCache } = require("apollo-server-express");
 const path = require("path");
