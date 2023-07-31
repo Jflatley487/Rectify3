@@ -11,7 +11,7 @@ import {
 } from "mdb-react-ui-kit";
 
 const TherapistCard = ({ name, specialty, _id, image }) => {
-  var singleLink = `/pages/Profile/${_id}`;
+  var singleLink = `./pages/Profile/${_id}`;
   return (
     <MDBContainer>
       <MDBRow className="justify-content-center">
