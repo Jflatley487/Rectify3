@@ -5,6 +5,7 @@ import { ADD_THERAPIST } from "../utils/mutations";
 import { Box, AppBar, Toolbar, Typography, Menu, Avatar, Button, MenuItem, Stack } from "@mui/material";
 import Auth from "../utils/auth";
 import TherapistCard from "../components/TherapistCard/index.js";
+import Profile from "./Profile";
 
 // Helper function to sanitize the therapist's name for use in a URL
 const sanitizeURL = (name) => {
@@ -81,9 +82,15 @@ const Therapists = ({ setIsLoggedIn }) => {
             
             {/* <ul className="list-group"> */}
             {therapists.map((therapist) => (
-              <TherapistCard  key={therapist._id} name={therapist.name} specialty={therapist.specialty} _id={therapist._id}
+              <Link key={therapist._id} to={`/Profile/${therapist._id}`}>
+              <TherapistCard  
+              key={therapist._id} 
+              name={therapist.name} 
+              specialty={therapist.specialty} 
+              _id={therapist._id}
               image={therapist.image} // Pass the image URL to the TherapistCard component
               />
+              </Link>
               ))}
             {/* </ul> */}
 
