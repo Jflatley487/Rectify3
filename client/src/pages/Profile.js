@@ -109,13 +109,7 @@ const Profile = () => {
 
   return (
     <section style={{ backgroundColor: "#eee" }} className="mt-5">
-       {therapist && (
-        <TherapistCard
-          name={therapist.name}
-          specialty={therapist.specialty}
-          image={`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`}
-        />
-      )}
+      
 
       <MDBContainer className="py-4">
         {therapist && (

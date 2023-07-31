@@ -10,12 +10,14 @@ const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require("./schemas");
 const connectDB = require("./config/connection");
 const therapistsRoutes = require("./routes/therapistsRoutes");
+const { connect } = require("http2");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 
 const startApolloServer = async () => {
+  await connectDB();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -38,7 +40,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/api", therapistsRoutes);
 
-connectDB();
 /*.then(() => {
   server.start().then(() => {
     server.applyMiddleware({ app });

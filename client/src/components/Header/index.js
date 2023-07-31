@@ -40,7 +40,7 @@ const Header = () => {
         <Toolbar disableGutters>
           <Typography
             variant="h4"
-            noWrap
+            noWrap={false}
             component="a"
             href="/"
             sx={{
@@ -98,7 +98,7 @@ const Header = () => {
           {/* Typography component for 'Rectify' logo (only visible on mobile) */}
           <Typography
             variant="h5"
-            wrap
+            nowrap={false}
             component="a"
             href="/"
             sx={{
