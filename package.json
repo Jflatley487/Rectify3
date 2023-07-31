@@ -19,9 +19,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    
-    "keyv": "^4.5.3"
-  }
+  "license": "ISC"
 }
