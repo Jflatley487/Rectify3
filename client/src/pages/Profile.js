@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import TherapistCard from "../components/TherapistCard";
+import TherapistCard from "../components/TherapistCard/index.js";
 import {
   MDBCol,
   MDBContainer,
@@ -109,13 +109,13 @@ const Profile = () => {
 
   return (
     <section style={{ backgroundColor: "#eee" }} className="mt-5">
-      {/* {therapist && (
+       {therapist && (
         <TherapistCard
           name={therapist.name}
           specialty={therapist.specialty}
           image={`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`}
         />
-      )} */}
+      )}
 
       <MDBContainer className="py-4">
         {therapist && (
@@ -124,9 +124,7 @@ const Profile = () => {
               <MDBCard className="mb-4">
                 <MDBCardBody className="text-center">
                   <MDBCardImage
-                    src={`/images/TherapistImages/${sanitizeURL(
-                      therapist.name
-                    )}.jpeg`}
+                    src={`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`}
                     alt="avatar"
                     className="rounded-circle"
                     style={{ width: "141px" }}

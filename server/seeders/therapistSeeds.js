@@ -13,10 +13,6 @@ const therapistData = [
     specialty: 'Cognitive Behavioral Therapy (CBT)',
     location: 'New York City, NY',
     bio: 'As an experienced Cognitive Behavioral Therapist, I am dedicated to helping ex-convicts overcome the challenges of reintegrating into society. My passion lies in empowering individuals to break free from the cycle of recidivism by fostering positive mindset shifts and teaching effective coping strategies. With a compassionate and non-judgmental approach, I am committed to guiding my clients toward personal growth, enabling them to lead fulfilling lives and contribute positively to their communities.',
-    comments: {
-      commentBody: "I had a great experience with Dr. Roberts!",
-      commenter: "Tester"
-    }
   },
   {
     name: 'David Chang, LMFT',

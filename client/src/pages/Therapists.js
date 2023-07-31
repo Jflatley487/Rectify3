@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_THERAPIST } from "../utils/mutations";
 import { Box, AppBar, Toolbar, Typography, Menu, Avatar, Button, MenuItem, Stack } from "@mui/material";
 import Auth from "../utils/auth";
-import TherapistCard from "../components/TherapistCard";
+import TherapistCard from "../components/TherapistCard/index.js";
 
 // Helper function to sanitize the therapist's name for use in a URL
 const sanitizeURL = (name) => {
