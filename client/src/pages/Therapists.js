@@ -6,6 +6,7 @@ import { Box, AppBar, Toolbar, Typography, Menu, Avatar, Button, MenuItem, Stack
 import Auth from "../utils/auth";
 import TherapistCard from "../components/TherapistCard/index.js";
 import Profile from "./Profile";
+import handcuffs from "../../src/img/David-Chang-LMFT.jpeg";
 
 // Helper function to sanitize the therapist's name for use in a URL
 const sanitizeURL = (name) => {
@@ -34,7 +35,7 @@ const Therapists = ({ setIsLoggedIn }) => {
         console.log(`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`);
         return ({
         ...therapist,
-        image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
+        image: handcuffs,
         // image: "/images/Handcuffs.jpg",
       })});
 
