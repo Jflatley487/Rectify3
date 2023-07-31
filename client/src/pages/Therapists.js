@@ -29,11 +29,14 @@ const Therapists = ({ setIsLoggedIn }) => {
       const data = await response.json();
       // Assuming the therapist data includes an 'image' property for each therapist.
       // Update the data to include the image URL for each therapist.
-      const therapistsWithImages = data.map((therapist) => ({
+      const therapistsWithImages = data.map((therapist) => {
+        console.log(`/images/TherapistImages/${therapist.name}.jpeg`);
+        console.log(`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`);
+        return ({
         ...therapist,
-        //image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
-        image: "/images/Handcuffs.jpg",
-      }));
+        image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
+        // image: "/images/Handcuffs.jpg",
+      })});
 
       setTherapists(therapistsWithImages);
     } catch (error) {
