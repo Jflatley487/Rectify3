@@ -14,6 +14,7 @@ const therapistsRoutes = require("./routes/therapistsRoutes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 const startApolloServer = async () => {
 const server = new ApolloServer({
   typeDefs,
@@ -23,6 +24,7 @@ const server = new ApolloServer({
 
 await server.start();
 server.applyMiddleware({ app });
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
