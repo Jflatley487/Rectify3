@@ -3,7 +3,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
-const { ApolloServerPluginCacheControl } = require("apollo-server-core");
+
 const { typeDefs, resolvers } = require("./schemas");
 const connectDB = require("./config/connection");
 const therapistsRoutes = require("./routes/therapistsRoutes");
@@ -15,11 +15,6 @@ const startApolloServer = async () => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  plugins: [
-    ApolloServerPluginCacheControl({
-      defaultMaxAge: 5,
-  }),
-],
   context: authMiddleware,
 });
 
