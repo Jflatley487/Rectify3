@@ -16,7 +16,7 @@ const typeDefs = gql`
   }
 
   type Therapist {
-    id: ID
+    _id: ID
     name: String
     specialty: String
     location: String
