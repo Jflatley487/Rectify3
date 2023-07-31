@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
-const { ApolloServer, InMemoryLRUCache } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 
@@ -13,8 +13,6 @@ const therapistsRoutes = require("./routes/therapistsRoutes");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-//const startApolloServer = async () => {
 
 
 app.use(express.urlencoded({ extended: false }));
