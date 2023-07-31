@@ -31,7 +31,8 @@ const Therapists = ({ setIsLoggedIn }) => {
       // Update the data to include the image URL for each therapist.
       const therapistsWithImages = data.map((therapist) => ({
         ...therapist,
-        image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
+        //image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
+        image: "/images/Handcuffs.jpg",
       }));
 
       setTherapists(therapistsWithImages);

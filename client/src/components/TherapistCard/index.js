@@ -23,7 +23,7 @@ const TherapistCard = ({ name, specialty, _id, image }) => {
                   {image && (
                     <MDBCardImage
                       style={{ width: "180px", borderRadius: "10px" }}
-                      src={"/images/TherapistImages/linda-johnson-lpc.jpeg"}
+                      src={image}
                       alt={name}
                       fluid
                     />
