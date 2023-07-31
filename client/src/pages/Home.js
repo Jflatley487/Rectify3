@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../utils/css/Home.css";
-import handcuffs from "../../src/img/Handcuffs.jpg";
+import handcuffs from "../../src/img/David-Chang-LMFT.jpeg";
+//import handcuffs from "../../src/img/Handcuffs.jpg";
 
 function LandingPageButton() {
   return (
