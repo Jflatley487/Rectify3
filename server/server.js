@@ -15,6 +15,17 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
+const startApolloServer = async () => {
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
+
+await server.start();
+server.applyMiddleware({ app });
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -25,21 +36,10 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  cache: new InMemoryLRUCache({
-    maxSize: 10000,
-  }),
-  context: authMiddleware,
-});
-
-
-server.applyMiddleware({ app });
-
 app.use("/api", therapistsRoutes);
 
-connectDB().then(() => {
+connectDB();
+/*.then(() => {
   server.start().then(() => {
     server.applyMiddleware({ app });
     app.listen(PORT, () => {
@@ -49,20 +49,20 @@ connectDB().then(() => {
       );
     });
   });
-});
+});*/
 
 
 /*const startApolloServer = async () => {
   await server.start();
   server.applyMiddleware({ app });*/
 
-  /*//db.once("open", () => {
+  //db.once("open", () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(
         `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
       });
-    };*/
+    };
 
 
 
