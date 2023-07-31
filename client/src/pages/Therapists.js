@@ -82,7 +82,6 @@ const Therapists = ({ setIsLoggedIn }) => {
             
             {/* <ul className="list-group"> */}
             {therapists.map((therapist) => (
-              <Link key={therapist._id} to={`/Profile/${therapist._id}`}>
               <TherapistCard  
               key={therapist._id} 
               name={therapist.name} 
@@ -90,7 +89,6 @@ const Therapists = ({ setIsLoggedIn }) => {
               _id={therapist._id}
               image={therapist.image} // Pass the image URL to the TherapistCard component
               />
-              </Link>
               ))}
             {/* </ul> */}
 
