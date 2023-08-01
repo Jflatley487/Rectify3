@@ -54,7 +54,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <Router basename="/">
         <div className="flex-column justify-flex-start min-100-vh">
           <Header handleLogout={handleLogout} />
           <div className="container">
