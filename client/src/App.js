@@ -61,20 +61,20 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route
-                path="/login"
+                path="login"
                 element={isLoggedIn ? <Navigate to="/" /> : <Login />}
               />
               <Route
-                path="/signup"
+                path="signup"
                 element={isLoggedIn ? <Navigate to="/" /> : <SignUp />}
               />
               <Route
                 path="/"
                 element={isLoggedIn ? <Therapists /> : <Navigate to="/login" />}
               />
-              <Route path="/Profile/:therapistId" element={<Profile />} />
-              <Route path="/therapists" element={<Therapists />} />
-              <Route path="/about" element={<About />} />
+              <Route path="profile/:therapistId" element={<Profile />} />
+              <Route path="therapists" element={<Therapists />} />
+              <Route path="about" element={<About />} />
             </Routes>
           </div>
         </div>
