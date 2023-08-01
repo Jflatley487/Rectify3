@@ -9,9 +9,11 @@ import {
   MDBCardBody,
   MDBCardImage,
 } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 
 const TherapistCard = ({ name, specialty, _id, image }) => {
-  var singleLink = `/Profile/${_id}`;
   return (
     <MDBContainer>
       <MDBRow className="justify-content-center">
@@ -32,18 +34,21 @@ const TherapistCard = ({ name, specialty, _id, image }) => {
                 <div className="flex-grow-1 ms-3">
                   <MDBCardTitle>{name}</MDBCardTitle>
                   <MDBCardText>{specialty}</MDBCardText>
-                  <div
-                    className="d-flex justify-content-center align-items-center text-white bg-primary p-2"
-                    style={{
-                      textDecoration: "none",
-                      borderRadius: "5px",
-                      cursor: "pointer",
+                  <MDBCardText>id {_id}</MDBCardText>
+                  <Link style={{ textDecoration: "none", color: "inherit" }}>
+                  <Button
+                    variant="outline"
+                    color="#0F0"
+                    onClick={(event) => {
+                      window.location.href = `/Profile/${_id}`;
                     }}
-                    onClick={() => (window.location.href = singleLink)}
-                  >
+                    >
                     Profile
-                  </div>
+                  </Button>
+                  </Link>
                 </div>
+
+
               </div>
             </MDBCardBody>
           </MDBCard>

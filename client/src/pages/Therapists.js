@@ -50,17 +50,12 @@ const Therapists = ({ setIsLoggedIn }) => {
   
   const [addTherapist, { error, data }] = useMutation(ADD_THERAPIST);
 
-
-
   const handleTherapistSelection = (therapist) => {
     setSelectedTherapist(therapist);
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-  
-    
 
     if (selectedTherapist) {
       try {
