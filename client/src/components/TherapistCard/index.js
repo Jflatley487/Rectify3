@@ -34,7 +34,6 @@ const TherapistCard = ({ name, specialty, _id, image }) => {
                 <div className="flex-grow-1 ms-3">
                   <MDBCardTitle>{name}</MDBCardTitle>
                   <MDBCardText>{specialty}</MDBCardText>
-                  <MDBCardText>id {_id}</MDBCardText>
                   <Link style={{ textDecoration: "none", color: "inherit" }}>
                   <Button
                     variant="outline"

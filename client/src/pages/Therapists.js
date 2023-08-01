@@ -4,14 +4,12 @@ import { ADD_THERAPIST } from "../utils/mutations";
 import Auth from "../utils/auth";
 import TherapistCard from "../components/TherapistCard/index.js";
 
-import sam from "../../src/img/Dr-Samantha-Roberts.jpeg";
-import emily from "../../src/img/Dr-Emily-Mitchell-PsyD.jpeg";
-import david from "../../src/img/David-Chang-LMFT.jpeg";
-import maria from "../../src/img/Dr-Maria-Sanchez-PhD.jpeg";
-import jon from "../../src/img/Jonathan-Ramirez-LCSW.jpeg";
-import linda from "../../src/img/Linda-Johnson-LPC.jpeg";
-
-
+// import sam from "../../src/img/Dr-Samantha-Roberts.jpeg";
+// import emily from "../../src/img/Dr-Emily-Mitchell-PsyD.jpeg";
+// import david from "../../src/img/David-Chang-LMFT.jpeg";
+// import maria from "../../src/img/Dr-Maria-Sanchez-PhD.jpeg";
+// import jon from "../../src/img/Jonathan-Ramirez-LCSW.jpeg";
+// import linda from "../../src/img/Linda-Johnson-LPC.jpeg";
 
 // Helper function to sanitize the therapist's name for use in a URL
 const sanitizeURL = (name) => {
@@ -24,7 +22,7 @@ const sanitizeURL = (name) => {
 const Therapists = ({ setIsLoggedIn }) => {
   const [selectedTherapist, setSelectedTherapist] = useState(null); // Updated state variable
   const [therapists, setTherapists] = useState([]); // Updated state variable
-  const therapistsImages = [sam, david, maria, emily, jon, linda];
+  // const therapistsImages = [sam, david, maria, emily, jon, linda];
 
   useEffect(() => {
     fetchTherapists();
@@ -36,10 +34,10 @@ const Therapists = ({ setIsLoggedIn }) => {
       const data = await response.json();
       // Assuming the therapist data includes an 'image' property for each therapist.
       // Update the data to include the image URL for each therapist.
-      const therapistsWithImages = data.map((therapist, index) => {
+      const therapistsWithImages = data.map((therapist) => {
         return ({
         ...therapist,
-        image: therapistsImages[index],
+        image: `/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`,
       })});
 
       setTherapists(therapistsWithImages);
