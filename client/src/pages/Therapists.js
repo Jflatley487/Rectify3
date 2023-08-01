@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_THERAPIST } from "../utils/mutations";
-import { Box, AppBar, Toolbar, Typography, Menu, Avatar, Button, MenuItem, Stack } from "@mui/material";
 import Auth from "../utils/auth";
 import TherapistCard from "../components/TherapistCard/index.js";
-import Profile from "./Profile";
-import handcuffs from "../../src/img/David-Chang-LMFT.jpeg";
+
+import sam from "../../src/img/Dr-Samantha-Roberts.jpeg";
+import emily from "../../src/img/Dr-Emily-Mitchell-PsyD.jpeg";
+import david from "../../src/img/David-Chang-LMFT.jpeg";
+import maria from "../../src/img/Dr-Maria-Sanchez-PhD.jpeg";
+import jon from "../../src/img/Jonathan-Ramirez-LCSW.jpeg";
+import linda from "../../src/img/Linda-Johnson-LPC.jpeg";
+
+
 
 // Helper function to sanitize the therapist's name for use in a URL
 const sanitizeURL = (name) => {
@@ -19,6 +24,7 @@ const sanitizeURL = (name) => {
 const Therapists = ({ setIsLoggedIn }) => {
   const [selectedTherapist, setSelectedTherapist] = useState(null); // Updated state variable
   const [therapists, setTherapists] = useState([]); // Updated state variable
+  const therapistsImages = [sam, david, maria, emily, jon, linda];
 
   useEffect(() => {
     fetchTherapists();
@@ -30,13 +36,10 @@ const Therapists = ({ setIsLoggedIn }) => {
       const data = await response.json();
       // Assuming the therapist data includes an 'image' property for each therapist.
       // Update the data to include the image URL for each therapist.
-      const therapistsWithImages = data.map((therapist) => {
-        console.log(`/images/TherapistImages/${therapist.name}.jpeg`);
-        console.log(`/images/TherapistImages/${sanitizeURL(therapist.name)}.jpeg`);
+      const therapistsWithImages = data.map((therapist, index) => {
         return ({
         ...therapist,
-        image: handcuffs,
-        // image: "/images/Handcuffs.jpg",
+        image: therapistsImages[index],
       })});
 
       setTherapists(therapistsWithImages);
@@ -83,9 +86,6 @@ const Therapists = ({ setIsLoggedIn }) => {
           </h4>
           <div className="card-body">
             <p>Choose from the top therapists:</p>
-
-            
-            {/* <ul className="list-group"> */}
             {therapists.map((therapist) => (
               <TherapistCard  
               key={therapist._id} 
@@ -95,7 +95,6 @@ const Therapists = ({ setIsLoggedIn }) => {
               image={therapist.image} // Pass the image URL to the TherapistCard component
               />
               ))}
-            {/* </ul> */}
 
 
             {selectedTherapist && (
